@@ -1,0 +1,37 @@
+{
+  "name": "@fatbrain/preact-custom-element",
+  "version": "0.1.0-rc.1",
+  "description": "web components custom element wrapper for preact components",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.js.map"
+  ],
+  "keywords": [
+    "preact",
+    "custom element",
+    "web components"
+  ],
+  "author": "Jonas Jonsson <fatbrain@gmail.com>",
+  "homepage": "https://github.com/fatbrain/preact-custom-element",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatbrain/preact-custom-element.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fatbrain/preact-custom-element/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "preact": "^10.15.0",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "preact": "^10"
+  }
+}
