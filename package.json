@@ -1,6 +1,6 @@
 {
   "name": "@fatbrain/preact-custom-element",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0-rc.2",
   "description": "web components custom element wrapper for preact components",
   "main": "index.js",
   "types": "index.d.ts",
@@ -28,8 +28,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "preact": "^10.15.0",
-    "typescript": "^5.0.4"
+    "preact": "^10.21.0",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "preact": "^10"

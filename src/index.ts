@@ -17,12 +17,9 @@ type RequiredOf<TComponentType extends ComponentType<any>> = Omit<
   'children'
 >
 type PropsOf<T> = {
-  [P in keyof T as T[P] extends ComponentType<any>
-    ? P
-    : T[P] extends (...args: any) => any
-    ? never
-    : P]: T[P]
+  [P in keyof T]: T[P]
 }
+
 type EventsOf<T> = {
   [P in keyof T as T[P] extends (...args: any) => any ? P : never]: T[P]
 }
@@ -48,7 +45,7 @@ export type PropEvents<T> = {
 }
 
 export type Options<TComponentType extends ComponentType<any>> = {
-  shadow: boolean
+  shadow?: boolean
   events?: PropEvents<EventsOf<RequiredOf<TComponentType>>>
 }
 
@@ -60,6 +57,7 @@ const from = Object.fromEntries
 const isString = (value: any): value is string => typeof value === 'string'
 const noop = (value: any) => value
 const toArray = <T>(value: ArrayLike<T>): T[] => [].slice.call(value)
+
 class ContextProvider extends Component<any> {
   getChildContext() {
     return this.props.context
@@ -147,7 +145,7 @@ export default function register<TComponentType extends ComponentType<any>>(
         )
       },
     ])
-    private _observer: MutationObserver = new MutationObserver(() => {
+    private _observer: MutationObserver = new MutationObserver((mutations, observer) => {
       const props = from(this._slots)
       this.querySelectorAll('[slot]').forEach(el => {
         const name = el.slot
